@@ -73,7 +73,7 @@
             </a>
         </li>
         <li class="mb-2">
-            <a href="#" class="btn w-100 text-start text-light">
+            <a href="blotter_status.php" class="btn w-100 text-start text-light">
                 <i class="bi bi-clipboard2-data me-2"></i>Blotter Status
             </a>
         </li>
