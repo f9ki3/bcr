@@ -20,7 +20,7 @@
         <div class="container-fluid p-4">
             <div class="container">
                 <div class="bg-dark rounded-4 p-4 mb-4">
-                        <h2 class="text-light">Welcome, Mel Rose Norca!</h2>
+                        <h2 class="text-light">Welcome, resident of Barangay 147-f!</h2>
                         <p class="text-light mb-4">Manage your barangay certificate requests easily.</p>
 
                         <div class="row text-light">

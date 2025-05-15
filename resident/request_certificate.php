@@ -7,7 +7,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barangay Online Application</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-color1 d-flex flex-column min-vh-100">
 
@@ -21,7 +20,34 @@
         <main class="container-fluid p-4">
             <div class="container bg-dark p-5 rounded rounded-4 shadow-sm">
                 <h2 class="mb-4 text-light">Request Certificate</h2>
-
+                <?php
+                            if (isset($_GET['status']) && ($_GET['status'] == "success" || $_GET['status'] == "error")) {
+                                // Get the status value from the URL query parameter
+                                $status = $_GET['status'];
+                                
+                                // Set the appropriate message, alert class, and icon based on the status
+                                if ($status == "success") {
+                                    $alertClass = "alert-success";
+                                    $message = "Certification Requested successfully";
+                                    $icon = "bi-check-circle";  // Success icon
+                                } else if ($status == "error") {
+                                    $alertClass = "alert-danger";
+                                    $message = "Certification Requested unsuccessful";
+                                    $icon = "bi-x-circle";  // Error icon
+                                }
+                            ?>
+                                <!-- HTML and Bootstrap Alert with Icons -->
+                                <div class="mt-3">
+                                    <div class="alert <?php echo $alertClass; ?> alert-dismissible fade show rounded rounded-4" role="alert">
+                                        <i class="bi <?php echo $icon; ?> me-2"></i>
+                                        <?php echo $message; ?>
+                                        <!-- Dismiss Button -->
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                </div>
+                            <?php
+                            }
+                            ?>
                 <form action="request_cert_action.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
                     <div class="row g-3">
                         <div class="col-md-6">
@@ -120,9 +146,40 @@
                         </div>
                     </div>
 
+                    <!-- ... your existing form fields ... -->
+
                     <div class="mt-4">
-                       <button type="submit" class="btn btn-outline-warning w-100 w-md-25 mt-3">Submit Request</button>
+                        <!-- Checkbox to confirm user review -->
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" id="reviewCheck" onchange="toggleSubmitButton()">
+                           <label class="form-check-label text-warning" for="reviewCheck">
+                                I agree that I have reviewed the data in the form before submitting
+                            </label>
+                        </div>
+
+                        <!-- Submit button disabled by default -->
+                        <button type="submit" id="submitBtn" class="btn btn-outline-warning w-100 w-md-25 mt-3" disabled>Submit Request</button>
                     </div>
+
+                    <script>
+                        function toggleOtherPurpose() {
+                            const purpose = document.getElementById('purpose').value;
+                            const otherGroup = document.getElementById('other-purpose-group');
+                            otherGroup.style.display = (purpose === 'Other') ? 'block' : 'none';
+                        }
+
+                        function toggleSubmitButton() {
+                            const checkbox = document.getElementById('reviewCheck');
+                            const submitBtn = document.getElementById('submitBtn');
+                            submitBtn.disabled = !checkbox.checked;
+                        }
+
+                        function validateForm() {
+                            // Add custom validation logic here if needed
+                            return true;
+                        }
+                    </script>
+
                 </form>
             </div>
         </main>
@@ -142,7 +199,5 @@
             return true;
         }
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

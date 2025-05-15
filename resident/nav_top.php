@@ -69,28 +69,28 @@
                     </a>
                 </li>
                 <li class="mb-2">
+                    <a href="request_certificate.php" class="btn w-100 text-start text-light">
+                        <i class="bi bi-file-earmark-text me-2"></i>Request Certificate
+                    </a>
+                </li>
+                <li class="mb-2">
                     <a href="#" class="btn w-100 text-start text-light">
                         <i class="bi bi-patch-check me-2"></i>Certificate Status
                     </a>
                 </li>
                 <li class="mb-2">
-                    <a href="#" class="btn w-100 text-start text-light">
+                    <a href="download_certificate.php" class="btn w-100 text-start text-light">
                         <i class="bi bi-download me-2"></i>Download Certificate
                     </a>
                 </li>
                 <li class="mb-2">
-                    <a href="#" class="btn w-100 text-start text-light">
+                    <a href="report_incident.php" class="btn w-100 text-start text-light">
                         <i class="bi bi-exclamation-triangle me-2"></i>Report Incident
                     </a>
                 </li>
                 <li class="mb-2">
-                    <a href="#" class="btn w-100 text-start text-light">
+                    <a href="" class="btn w-100 text-start text-light">
                         <i class="bi bi-clipboard2-data me-2"></i>Blotter Status
-                    </a>
-                </li>
-                <li class="mb-2">
-                    <a href="request_certificate.php" class="btn w-100 text-start text-light">
-                        <i class="bi bi-file-earmark-text me-2"></i>Request Certificate
                     </a>
                 </li>
                 <li class="mb-2">
