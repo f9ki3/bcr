@@ -1,3 +1,4 @@
+<?php include 'session.php'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +47,7 @@
         <div class="container">
             <h1 class="text-color1">Welcome to Barangay 176-F Online Application System</h1>
             <p>Request your barangay certificates such as Barangay Clearance, Certificate of Residency, and Indigency Certificates with ease through our online platform. File and monitor Blotter Reports conveniently from anywhere.</p>
-            <a href="application.php" class="btn btn-lg btn-color1 mt-4">Get Started</a>
+            <a href="login.php" class="btn btn-lg btn-color1 mt-4">Get Started</a>
         </div>
     </section>
 

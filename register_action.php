@@ -1,7 +1,7 @@
 <?php
 // Include the database connection
 include 'config.php';
-
+include 'session.php'; // Include session management
 // Function to hash password
 function hashPassword($password) {
     return password_hash($password, PASSWORD_DEFAULT);
@@ -48,13 +48,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $updated_at = $created_at;
 
     // Prepare SQL to insert data
-    $stmt = $conn->prepare("INSERT INTO user (fullname, username, email, password, Address, Contact_num, profile_image, created_at, updated_at) 
+    $stmt = $conn->prepare("INSERT INTO users (fullname, username, email, password, Address, Contact_num, profile_image, created_at, updated_at) 
                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("sssssssss", $fullname, $username, $email, $hashed_password, $address, $contact, $profile_image, $created_at, $updated_at);
 
     // Execute the query and check if successful
     if ($stmt->execute()) {
-        header("Location: login.php?success=Registration successful! Please log in.");
+        header("Location: register_success.php");
     } else {
         echo "Error: " . $stmt->error;
     }

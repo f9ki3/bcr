@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";  // Default username sa XAMPP
 $password = "123";      // Walang password sa XAMPP
-$database = "certificate_req"; // Siguraduhin tama ito!
+$database = "bcr"; // Siguraduhin tama ito!
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
