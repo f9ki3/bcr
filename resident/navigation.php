@@ -58,7 +58,7 @@
             </a>
         </li>
         <li class="mb-2">
-            <a href="#" class="btn w-100 text-start text-light">
+            <a href="certificate_status_fe.php" class="btn w-100 text-start text-light">
                 <i class="bi bi-patch-check me-2"></i>Certificate Status
             </a>
         </li>

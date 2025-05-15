@@ -67,20 +67,21 @@
                                     $id = $row['id'];
                             ?>
                                 <tr>
-                                    <td><?= htmlspecialchars($row['certificate_type']); ?></td>
-                                    <td><?= date('F j, Y', strtotime($row['request_date'])); ?></td>
-                                    <td>
+                                    <td class="pt-4 pb-3"><?= htmlspecialchars($row['certificate_type']); ?></td>
+                                    <td class="pt-4 pb-3"><?= date('F j, Y', strtotime($row['request_date'])); ?></td>
+                                    <td class="pt-4 pb-3">
                                         <a href="generate_certificate.php?id=<?= $id; ?>&view=1" 
-                                           class="btn btn-sm btn-success me-1" 
-                                           target="_blank">
-                                           View
+                                        class="btn btn-outline-warning text-warning rounded-pill me-1" 
+                                        target="_blank">
+                                        View
                                         </a>
-                                        <a href="generate_certificate.php?id=<?= $id; ?>&download=true" 
-                                        class="btn btn-sm btn-primary" 
+                                        <a style="color: green" href="generate_certificate.php?id=<?= $id; ?>&download=true" 
+                                        class="btn btn-warning rounded-pill " 
                                         target="_blank">
                                         Download
                                         </a>
                                     </td>
+
                                 </tr>
                             <?php
                                 endwhile;
